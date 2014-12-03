@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  validates :username, :user_id, :provider, presence: true
+  validates :username, :uid, :name, presence: true
   has_many :posts
   has_many :comments
   has_many :tools, through: :ToolUsers
