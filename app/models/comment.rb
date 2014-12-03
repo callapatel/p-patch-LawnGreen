@@ -1,4 +1,4 @@
 class Comment < ActiveRecord::Base
-  validates :content 
+  validates :content, presence: true 
   belongs_to :post
 end
