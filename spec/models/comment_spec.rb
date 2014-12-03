@@ -1,5 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe Comment, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Comment do
+  
+  describe '.validates' do
+    it 'must have a body' do
+      expect(Comment.new(title: nil)).to_not be_valid
+    end
+  end
+
 end
