@@ -53,4 +53,9 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  get "/auth/twitter/callback", to: "sessions#create", as: :connect
+  post "/auth/twitter",  to: "sessions#create"
+
+  get "/", to: "home#index"
 end
