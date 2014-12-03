@@ -1,5 +1,6 @@
 require 'rails_helper'
-describe PostsController do
+
+describe HomeController do
   describe 'GET "index"' do
     it 'is successful' do
       get :index
@@ -7,5 +8,4 @@ describe PostsController do
     end
   end
 end
-    
 
