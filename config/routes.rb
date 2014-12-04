@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get "/",                          to: "home#index",         as: :root
   
+  post 'home/weather',               to: "home#weather",       as: :weather
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
