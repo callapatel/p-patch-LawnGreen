@@ -9,4 +9,10 @@ Low: <%= convert(@current['main']['temp_min'])%>
 Forecast: <%= @current['weather'][0]['main']%>
 <br>
 <img src='http://openweathermap.org/img/w/<%=@current['weather'][0]['icon']%>.png'>
-
+<p>
+5 day forecast
+High: <%= convert(@forecasted[:list][0]["temp"][max]) %>
+Low: <%= convert(@forecasted[:list][0]["temp"][min]) %>
+Forecast: <%= @forecasted[:weather][0]["main"]%>
+<img src='http://openweathermap.org/img/w/<%=@forecasted['weather'][0]['icon']%>.png'>
+</p>
