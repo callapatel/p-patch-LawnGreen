@@ -1,0 +1,12 @@
+<%= @current['name'] %> weather forecast
+<br>
+<%= convert(@current['main']['temp']) %>
+<br>
+High: <%= convert(@current['main']['temp_max']) %>
+<br>
+Low: <%= convert(@current['main']['temp_min'])%>
+<br>
+Forecast: <%= @current['weather'][0]['main']%>
+<br>
+<img src='http://openweathermap.org/img/w/<%=@current['weather'][0]['icon']%>.png'>
+
