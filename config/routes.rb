@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
 
-  get "/auth/:provider/callback",   to: "sessions#create",    as: :connect
-  get '/sessions',                  to: "sessions#destroy",   as: :destroy_session
+  get "/auth/:provider/callback", to: "sessions#create",  as: :connect
+  get '/sessions',                to: "sessions#destroy", as: :destroy_session
 
-  get "/",                          to: "home#index",         as: :root
+  get "/",                        to: "home#index",       as: :root
   
-  post 'home/weather',               to: "home#weather",       as: :weather
+  post 'home/weather',            to: "home#weather",     as: :weather
   
+  get '/tools',                   to: "tools#index",      as: :tools
+
+  post '/tools/borrow', to: "tools#borrow", as: :borrow
+  delete '/tools/return', to: "tools#return", as: :return
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
