@@ -53,7 +53,7 @@ class Calendar
     grid = grid.flatten
     grid.each_with_index { |item, index|
       if item == grab_weekday(month_array.first)
-      i = index
+        i = index
         month_array.each do |date|
           grid[i] = date
           i += 1
@@ -62,8 +62,8 @@ class Calendar
         #  grid[i] == month_array.shift
         #  i += 1
         #end
-      break
-      end  
+        break
+      end
     }
     grid
   end
