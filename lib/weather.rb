@@ -14,5 +14,9 @@ require 'httparty'
     response.parsed_response
   end
 
+  def self.request_forecast(path, lat, long)
+    response = HTTParty.get("http://api.openweathermap.org/data/2.5/#{path}/daily?lat=#{lat}&lon=#{long}&cnt=5&mode=json")
+    response.parsed_response
+  end
 
 end
