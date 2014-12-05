@@ -62,8 +62,9 @@ class Calendar
         #  grid[i] == month_array.shift
         #  i += 1
         #end
-        break
-      end
+
+      break
+      end  
     }
     grid
   end
