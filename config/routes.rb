@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
 
-  get "/auth/:provider/callback",   to: "sessions#create",    as: :connect
-  get '/sessions',                  to: "sessions#destroy",   as: :destroy_session
+  get "/auth/:provider/callback", to: "sessions#create",  as: :connect
+  get '/sessions',                to: "sessions#destroy", as: :destroy_session
 
-  get "/",                          to: "home#index",         as: :root
+  get "/",                        to: "home#index",       as: :root
+  
+  post 'home/weather',            to: "home#weather",     as: :weather
+  
+  get '/tools',                   to: "tools#index",      as: :tools
+  post '/tools/borrow', to: "tools#borrow", as: :borrow
+  delete '/tools/return', to: "tools#return", as: :return
 
-  post 'home/weather',               to: "home#weather",       as: :weather
 
   get "/post/new",                   to: "posts#new",           as: :new_post
   post "/posts",                      to: "posts#create",        as: :posts
