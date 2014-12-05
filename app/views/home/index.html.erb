@@ -2,10 +2,12 @@
 
 
 <% if session[:user_id] %>
-  <%= link_to "logout",  destroy_session_path, method: :delete %>
+  <%= link_to "logout",  destroy_session_path %>
+  <%= link_to "tools", tools_path %>
 <% else %>
   <%= link_to "login using twitter", "/auth/twitter" %>
-<% end %> 
+<% end %>
+ 
 
 <div id='startLat'></div>
 <div id='startLon'></div>

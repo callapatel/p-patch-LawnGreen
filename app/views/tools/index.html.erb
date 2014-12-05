@@ -1,0 +1,27 @@
+Show all the tools
+Display tool quantity
+Button on each tool
+  If tool quantity is greater than 0
+    Button for Check Out -> create line on Tool_Users table, decrement tool quantity
+  If user has that tool
+    Button for Check In -> delete line on Tool_Users table, increment tool quantity
+
+<br>
+
+<% Tool.all.order(:id).each do |tool| %>
+  <img src='<%=tool.image%>' width='150'>
+  <br>
+  <div id='<%=tool.id%>' class='tool'><%=tool.quantity%></div>
+  <br>
+  <% if session[:user_id] %>
+    <% if tool.quantity > 0 %>
+      <%= button_to "Borrow", borrow_path({tool_id: tool.id}), method: :post, class: "borrow" %>
+    <% end %>
+    <% if ToolUser.where(tool_id: tool.id, user_id: session[:user_id]).first %> Use AR relation
+      <%= button_to "Return", return_path({tool_id: tool.id}), method: :delete, class: "return" %>
+    <% end %>
+  <% end %>
+<% end %>
+
+  
+
