@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   get '/sessions',                to: "sessions#destroy", as: :destroy_session
 
   get "/",                        to: "home#index",       as: :root
-  
+
   post 'home/weather',            to: "home#weather",     as: :weather
-  
+
   get '/tools',                   to: "tools#index",      as: :tools
   post '/tools/borrow', to: "tools#borrow", as: :borrow
   delete '/tools/return', to: "tools#return", as: :return
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get "/post/new",                   to: "posts#new",           as: :new_post
   post "/posts",                      to: "posts#create",        as: :posts
+  get "/posts",                       to: "posts#show"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
