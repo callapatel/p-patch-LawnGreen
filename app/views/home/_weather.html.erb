@@ -14,9 +14,9 @@
   5 day forecast
   <% @forecasted["list"].each do |forecast| %>
   <p>
-  Day:  <%=  forecast["dt"] %> <br>
-  High:  <%= forecast["temp"]["max"] %> <br>
-  Low:  <%= forecast["temp"]["min"] %> <br>
+  Day:  <%=  Time.at(forecast["dt"]) %> <br>
+  High:  <%= convert(forecast["temp"]["max"]) %> <br>
+  Low:  <%= convert(forecast["temp"]["min"]) %> <br>
   Forecast:  <%= forecast["weather"][0]["main"] %> <br>
     <img src='http://openweathermap.org/img/w/<%=forecast["weather"][0]["icon"]%>.png'><br>
   </p>
