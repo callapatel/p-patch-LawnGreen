@@ -2,10 +2,10 @@
   <% @posts.each do |post| %>
     <p>
       <hr>
-        <h2><%= post.title %></h2>
+        <h1><%= post.title %></h1>
       </hr>
     <br>
-      <%= post.content.split[0..30].join(" ") %>
+      <h3><%= post.content.split[0..30].join(" ") %></h3> 
       <br>
       <%= link_to "Read more...", post %>
   </p>
