@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.Post.new(post_params)
     # raise params.inspect
     if @post.save
       redirect_to root_path
