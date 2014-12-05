@@ -1,0 +1,8 @@
+
+<div class="container">
+  <% if User.find(session[:user_id]).admin %>
+    <%= render "posts/newform" %>
+  <% else %>
+    You don't have access to this, please email: abc@gmail.com to retrieve access.
+  <% end %>
+</div>
