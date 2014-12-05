@@ -16,14 +16,20 @@ class Calendar
     month_array     
   end
 
-  def generate_year(year)
+  def generate_year(year) # generates an array of arrays (one per month)
     m = 1
     year_array = []
     12.times do |month|
       year_array.push(make_days_month(year, m))
       m += 1
     end
-    year_array.flatten
+    year_array
+  end
+
+  def grab_month(year, month)
+    month -= 1
+    array = generate_year(year)[month]
+    parse_array(array)
   end
 
   def parse_array(array)
@@ -37,5 +43,31 @@ class Calendar
   def grab_weekday(date_object)
     date_object.strftime("%A")
   end
+
+  def date_layover(month_array)
+    grid = []
+    days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    5.times do |not_important|
+      grid.push(days)
+    end
+    grid = grid.flatten
+    grid.each_with_index { |item, index|
+      if item == grab_weekday(month_array.first)
+      i = index
+        month_array.each do |date|
+          grid[i] = date
+          i += 1
+        end
+        #until month_array.length == 0
+        #  grid[i] == month_array.shift
+        #  i += 1
+        #end
+      break
+    end  
+    }
+    grid
+  end
+
+  
 end
 
