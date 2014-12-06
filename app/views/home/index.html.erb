@@ -15,5 +15,70 @@
   <div id='startLat'></div>
   <div id='startLon'></div>
 
+<div id='blah'></div>
+
+<table>
+  <tr>
+    <th>Sunday</th>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thursday</th>
+    <th>Friday</th>
+    <th>Saturday</th>
+  </tr>
+  <tr>
+    <% @week1.each do |day| %>
+      <td>
+        <% if day.class == Date %>
+          <%= day.mday %>
+        <% end %>
+      </td>
+    <% end %>
+  </tr>
+
+  <tr>
+    <% @week2.each do |day| %>
+      <td>
+        <% if day.class == Date %>
+          <%= day.mday %>
+        <% end %>
+      </td>
+    <% end %>
+  </tr>
+
+  <tr>
+    <% @week3.each do |day| %>
+      <td>
+        <% if day.class == Date %>
+          <%= day.mday %>
+        <% end %>
+      </td>
+    <% end %>
+  </tr>
+
+  
+  <tr>
+    <% @week4.each do |day| %>
+      <td>
+        <% if day.class == Date %>
+          <%= day.mday %>
+        <% end %>
+      </td>
+    <% end %>
+  </tr>
+
+
+  <tr>
+    <% @week5.each do |day| %>
+      <td>
+        <% if day.class == Date %>
+          <%= day.mday %>
+        <% end %>
+      </td>
+    <% end %>
+  </tr>
+</table>
+
   <div id='blah'></div>
 </div>
