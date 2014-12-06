@@ -1,16 +1,19 @@
 
+<div class = 'container'>
+
+  <% if session[:user_id] %>
+    <h3>
+      <%= link_to "logout",  destroy_session_path %>
+      <%= link_to "tools", tools_path %>
+      <%= link_to "posts", posts_path %> 
+    </h3>
+  <% else %>
+    <%= link_to "login using twitter", "/auth/twitter" %>
+  <% end %>
 
 
-<% if session[:user_id] %>
-  <%= link_to "logout",  destroy_session_path %>
-  <%= link_to "tools", tools_path %>
-<% else %>
-  <%= link_to "login using twitter", "/auth/twitter" %>
-<% end %>
- 
-
-<div id='startLat'></div>
-<div id='startLon'></div>
+  <div id='startLat'></div>
+  <div id='startLon'></div>
 
 <div id='blah'></div>
 
@@ -77,3 +80,5 @@
   </tr>
 </table>
 
+  <div id='blah'></div>
+</div>
