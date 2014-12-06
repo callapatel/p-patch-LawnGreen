@@ -1,24 +1,37 @@
 <div class = 'container'>
-  <%= @current['name'] %> weather forecast
-  <br>
-  <%= convert(@current['main']['temp']) %>
-  <br>
-  High: <%= convert(@current['main']['temp_max']) %>
-  <br>
-  Low: <%= convert(@current['main']['temp_min'])%>
-  <br>
-  Forecast: <%= @current['weather'][0]['main']%>
-  <br>
-  <img src='http://openweathermap.org/img/w/<%=@current['weather'][0]['icon']%>.png'>
+  <h1>
+    <%= @current['name'] %> weather forecast
+  </h1>
+  <h4>
+    <br>
+    <%= convert(@current['main']['temp']) %>
+    <br>
+    High: <%= convert(@current['main']['temp_max']) %>
+    <br>
+    Low: <%= convert(@current['main']['temp_min'])%>
+    <br>
+    Forecast: <%= @current['weather'][0]['main']%>
+    <br>
+    <img src='http://openweathermap.org/img/w/<%=@current['weather'][0]['icon']%>.png'>
+  </h4>
 
-  5 day forecast
-  <% @forecasted["list"].each do |forecast| %>
-  <p>
-  Day:  <%=  Time.at(forecast["dt"]) %> <br>
-  High:  <%= convert(forecast["temp"]["max"]) %> <br>
-  Low:  <%= convert(forecast["temp"]["min"]) %> <br>
-  Forecast:  <%= forecast["weather"][0]["main"] %> <br>
-    <img src='http://openweathermap.org/img/w/<%=forecast["weather"][0]["icon"]%>.png'><br>
-  </p>
-  <% end %>
+  <h2>
+    5 day forecast for <%= @current['name']%>
+  </h2>
+  <div class = 'row'>
+    <% @forecasted["list"].each do |forecast| %>
+              <div class='col-md-2'>
+                <h6>
+                  Day:  <%=  (Time.at((forecast["dt"]))).strftime("%A") %> <br>
+                  High:  <%= convert(forecast["temp"]["max"]) %> <br>
+                  Low:  <%= convert(forecast["temp"]["min"]) %> <br>
+                  Forecast:  <%= forecast["weather"][0]["main"] %> <br>
+                  <img src='http://openweathermap.org/img/w/<%=forecast["weather"][0]["icon"]%>.png'>
+                  <br>
+                </h6>
+              </div>
+    <% end %>
+
+
+  </div>
 </div>
