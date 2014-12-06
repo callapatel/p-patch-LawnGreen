@@ -1,0 +1,13 @@
+<div class = 'container'>
+  <% @posts.each do |post| %>
+    <p>
+      <hr>
+        <h1><%= post.title %></h1>
+      </hr>
+    <br>
+      <h3><%= post.content.split[0..30].join(" ") %></h3> 
+      <br>
+      <%= link_to "Read more...", post %>
+  </p>
+  <% end %>
+</div>
