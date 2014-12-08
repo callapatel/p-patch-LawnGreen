@@ -4,7 +4,7 @@ window.onload = function() {
     startPos = position;
     document.getElementById('startLat').innerHTML = startPos.coords.latitude;
     document.getElementById('startLon').innerHTML = startPos.coords.longitude;
-  
+
     $.ajax(
       '/home/weather', {
         method: 'post',
@@ -14,14 +14,11 @@ window.onload = function() {
         },
         success: function(myResponse){
           console.log(myResponse)
-          $('#blah').html(myResponse);
+          $('#showeather').html(myResponse);
         }
       }
     );
   };
   navigator.geolocation.getCurrentPosition(geoSuccess);
-  
+
 };
-
-
-
