@@ -79,6 +79,7 @@
     <% end %>
   </tr>
 </table>
-
+<%= @week2.first.month %>
+<%=button_to "Next", root_path(thing: "next", time: @week2.first), class: "choose btn btn-success"  %>
   </div>
 </div>
