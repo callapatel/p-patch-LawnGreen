@@ -1,4 +1,4 @@
-
+<%= current_user.inspect %>
 <div class = 'container'>
 
   <% if session[:user_id] %>
@@ -15,9 +15,11 @@
   <div id='startLat'></div>
   <div id='startLon'></div>
 
-<div id='calendar'>
+<div id='showeather'> </div>
+<div id= 'calendar'>
 
 <table>
+<h2>  <%= @week2.first.strftime("%B")%> </h2>
   <tr>
     <th>Sunday</th>
     <th>Monday</th>
@@ -79,7 +81,7 @@
     <% end %>
   </tr>
 </table>
-<%= @week2.first.month %>
+<% @week2.first.strftime("%B")%>
 <%=button_to "Next", root_path(thing: "next", time: @week2.first), class: "choose btn btn-success"  %>
   </div>
 </div>
