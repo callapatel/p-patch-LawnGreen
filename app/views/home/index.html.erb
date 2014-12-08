@@ -5,7 +5,7 @@
     <h3>
       <%= link_to "logout",  destroy_session_path %>
       <%= link_to "tools", tools_path %>
-      <%= link_to "posts", posts_path %> 
+      <%= link_to "posts", posts_path %>
     </h3>
   <% else %>
     <%= link_to "login using twitter", "/auth/twitter" %>
@@ -15,7 +15,7 @@
   <div id='startLat'></div>
   <div id='startLon'></div>
 
-<div id='blah'></div>
+<div id='calendar'>
 
 <table>
   <tr>
@@ -57,7 +57,7 @@
     <% end %>
   </tr>
 
-  
+
   <tr>
     <% @week4.each do |day| %>
       <td>
@@ -80,5 +80,5 @@
   </tr>
 </table>
 
-  <div id='blah'></div>
+  </div>
 </div>
