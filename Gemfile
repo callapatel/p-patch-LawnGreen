@@ -45,7 +45,7 @@ gem 'twitter'
 
 gem 'httparty'
 
-gem 'dotenv-rails', :groups => [:development, :test]
+gem 'dotenv-rails', :groups => [:development, :test, :production]
 
 group :development do
   gem 'better_errors'
