@@ -91,7 +91,6 @@
 </table>
 <% @week2.first.strftime("%B")%>
 <%=button_to "Next", root_path(thing: "next", time: @week2.first), class: "choose btn btn-success"  %>
+<%=button_to "Previous", root_path(thing: "prev", time: @week2.first), class: "choose btn btn-success"  %>
   </div>
 </div>
-
-
