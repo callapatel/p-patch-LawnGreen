@@ -1,16 +1,26 @@
 <%= current_user.inspect %>
 <div class = 'container'>
-
+  <h3>
   <% if session[:user_id] %>
-    <h3>
       <%= link_to "logout",  destroy_session_path %>
       <%= link_to "tools", tools_path %>
       <%= link_to "posts", posts_path %>
+      <% if User.find(session[:user_id]).email == nil %>
+        <a href='javascript:void(0)' onClick="$('#modal-window').modal()">subscribe</a>
+      <% end %> 
     </h3>
   <% else %>
-    <%= link_to "login using twitter", "/auth/twitter" %>
+      <%= link_to "login using twitter", "/auth/twitter" %>
   <% end %>
+  </h3>
 
+<div id='modal-window' class='modal fade' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true' >
+  <div class='modal-dialog'>
+    <div class='modal-content'>
+      <%= render 'home/subscribe'%>
+    </div>
+  </div>
+</div>
 
   <div id='startLat'></div>
   <div id='startLon'></div>
@@ -85,3 +95,5 @@
 <%=button_to "Next", root_path(thing: "next", time: @week2.first), class: "choose btn btn-success"  %>
   </div>
 </div>
+
+
