@@ -46,6 +46,7 @@ require 'date'
     @week3 = @calendar[14..20]
     @week4 = @calendar[21..27]
     @week5 = @calendar[28..34]
+    @week6 = @calendar[35..42]
   end
 
 

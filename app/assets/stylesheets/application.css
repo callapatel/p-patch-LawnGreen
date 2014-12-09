@@ -24,9 +24,11 @@ body {
   background: #15203E;
   margin:  #15203E;
   border:  #15203E;
+  font-family: Helvetica, sans-serif !important;
+  text-transform: uppercase;
 }
 
 .btn:hover {
   background: #1b2a51;
 }
- 
+
