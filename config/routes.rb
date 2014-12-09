@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/sessions',                to: "sessions#destroy", as: :destroy_session
 
   get "/",                        to: "home#index",       as: :root
+  post "/",                       to: "home#index"
 
   post 'home/weather',            to: "home#weather",     as: :weather
 

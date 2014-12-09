@@ -1,3 +1,4 @@
+<%= current_user.inspect %>
 <div class = 'container'>
   <h3>
   <% if session[:user_id] %>
@@ -7,6 +8,7 @@
       <% if User.find(session[:user_id]).email == nil %>
         <a href='javascript:void(0)' onClick="$('#modal-window').modal()">subscribe</a>
       <% end %> 
+    </h3>
   <% else %>
       <%= link_to "login using twitter", "/auth/twitter" %>
   <% end %>
@@ -23,9 +25,11 @@
   <div id='startLat'></div>
   <div id='startLon'></div>
 
-<div id='blah'></div>
+<div id='showeather'> </div>
+<div id= 'calendar'>
 
 <table>
+<h2>  <%= @week2.first.strftime("%B")%> </h2>
   <tr>
     <th>Sunday</th>
     <th>Monday</th>
@@ -65,7 +69,7 @@
     <% end %>
   </tr>
 
-  
+
   <tr>
     <% @week4.each do |day| %>
       <td>
@@ -87,8 +91,9 @@
     <% end %>
   </tr>
 </table>
-
-  <div id='blah'></div>
+<% @week2.first.strftime("%B")%>
+<%=button_to "Next", root_path(thing: "next", time: @week2.first), class: "choose btn btn-success"  %>
+  </div>
 </div>
 
 
