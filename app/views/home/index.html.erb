@@ -26,20 +26,20 @@
 <div id='showeather'> </div>
 <div id= 'calendar'>
 
-<table>
-<h2>  <%= @week2.first.strftime("%B")%> </h2>
+<table class='table table-bordered'>
+<h3>  <%= @week2.first.strftime("%B")%> </h3>
   <tr>
-    <th>Sunday</th>
-    <th>Monday</th>
-    <th>Tuesday</th>
-    <th>Wednesday</th>
-    <th>Thursday</th>
-    <th>Friday</th>
-    <th>Saturday</th>
+    <th class='calcol'><h4 class='small'>Sunday</h4></th>
+    <th class='calcol'><h4 class='small'>Monday</h4></th>
+    <th class='calcol'><h4 class='small'>Tuesday</h4></th>
+    <th class='calcol'><h4 class='small'>Wednesday</h4></th>
+    <th class='calcol'><h4 class='small'>Thursday</h4></th>
+    <th class='calcol'><h4 class='small'>Friday</h4></th>
+    <th class='calcol'><h4 class='small'>Saturday</h4></th>
   </tr>
-  <tr>
+  <tr class='calrow'>
     <% @week1.each do |day| %>
-      <td>
+      <td class='calcol'>
         <% if day.class == Date %>
           <%= day.mday %>
         <% end %>
@@ -47,9 +47,9 @@
     <% end %>
   </tr>
 
-  <tr>
+  <tr class='calrow'>
     <% @week2.each do |day| %>
-      <td>
+      <td class='calcol'>
         <% if day.class == Date %>
           <%= day.mday %>
         <% end %>
@@ -57,9 +57,9 @@
     <% end %>
   </tr>
 
-  <tr>
+  <tr class='calrow'>
     <% @week3.each do |day| %>
-      <td>
+      <td class='calcol'>
         <% if day.class == Date %>
           <%= day.mday %>
         <% end %>
@@ -67,10 +67,9 @@
     <% end %>
   </tr>
 
-
-  <tr>
+  <tr class='calrow'>
     <% @week4.each do |day| %>
-      <td>
+      <td class='calcol'>
         <% if day.class == Date %>
           <%= day.mday %>
         <% end %>
@@ -78,10 +77,9 @@
     <% end %>
   </tr>
 
-
-  <tr>
+  <tr class='calrow'>
     <% @week5.each do |day| %>
-      <td>
+      <td class='calcol'>
         <% if day.class == Date %>
           <%= day.mday %>
         <% end %>
