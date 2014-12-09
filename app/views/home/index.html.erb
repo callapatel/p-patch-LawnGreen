@@ -5,9 +5,7 @@
       <%= link_to "logout",  destroy_session_path %>
       <%= link_to "tools", tools_path %>
       <%= link_to "posts", posts_path %>
-      <% if User.find(session[:user_id]).email == nil %>
-        <a href='javascript:void(0)' onClick="$('#modal-window').modal()">subscribe</a>
-      <% end %> 
+      <a href='javascript:void(0)' onClick="$('#modal-window').modal()">subscribe</a>
     </h3>
   <% else %>
       <%= link_to "login using twitter", "/auth/twitter" %>
