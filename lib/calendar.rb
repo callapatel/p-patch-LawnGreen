@@ -47,7 +47,7 @@ class Calendar
   def date_layover(month_array)
     grid = []
     days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-    5.times do |not_important|
+    6.times do |not_important|
       grid.push(days)
     end
     grid = grid.flatten

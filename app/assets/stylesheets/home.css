@@ -18,3 +18,13 @@ th {
 .modal-content {
   background: #f7f7f7;
 }
+
+.modal-title {
+  text-align: center;
+  font-family: 'Crimson Text', serif !important;
+}
+
+.calendtitle {
+  text-transform: uppercase;
+}
+
