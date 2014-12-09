@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'home/subscribe',           to: "home#subscribe",   as: :subscribe
 
+  post 'user/email',              to: "users#email"
+
   get '/tools',                   to: "tools#index",      as: :tools
   post '/tools/borrow',           to: "tools#borrow",     as: :borrow
   delete '/tools/return',         to: "tools#return",     as: :return
