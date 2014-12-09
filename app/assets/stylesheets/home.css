@@ -1,0 +1,17 @@
+.calrow {
+  height: 100px;
+}
+
+.calcol {
+  width: 150px;
+}
+
+tr th.calcol {
+  background-color: #f7f7f7;
+  padding: 0 !important;
+}
+
+th {
+  text-align: center;
+}
+
