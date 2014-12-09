@@ -7,9 +7,11 @@ Rails.application.routes.draw do
 
   post 'home/weather',            to: "home#weather",     as: :weather
 
+  get 'home/subscribe',           to: "home#subscribe",   as: :subscribe
+
   get '/tools',                   to: "tools#index",      as: :tools
-  post '/tools/borrow', to: "tools#borrow", as: :borrow
-  delete '/tools/return', to: "tools#return", as: :return
+  post '/tools/borrow',           to: "tools#borrow",     as: :borrow
+  delete '/tools/return',         to: "tools#return",     as: :return
 
 
   get "/post/new",                   to: "posts#new",           as: :new_post
