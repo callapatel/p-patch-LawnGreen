@@ -16,5 +16,17 @@
 
 body {
   color: #15203E;
+  font-family: Helvetica, sans-serif !important;
+  letter-spacing: 1px !important;
 }
 
+.btn {
+  background: #15203E;
+  margin:  #15203E;
+  border:  #15203E;
+}
+
+.btn:hover {
+  background: #1b2a51;
+}
+ 
