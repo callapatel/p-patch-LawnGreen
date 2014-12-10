@@ -1,8 +1,9 @@
 class NewsMailer < ActionMailer::Base
   default from: "mcomcalla@gmail.com"
 
-  def welcome
-    mail(to: "callapatel@gmail.com", subject: "Welcome to Live The Life")
+  def welcome(user_id)
+    @user = User.find(user_id)
+    mail(to: @user.email, subject: "welcome!")
   end
 
 end
