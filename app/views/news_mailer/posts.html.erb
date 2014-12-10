@@ -1,0 +1,4 @@
+<h1> <%= link_to @post.title, post_path(@post.id) %></h1>
+<%= @post.content %>
+
+<%= link_to "View Other Posts", posts_path %>
