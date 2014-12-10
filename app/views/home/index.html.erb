@@ -1,93 +1,86 @@
 <div class = 'container'>
-  <% if session[:user_id] %>
-      <%= link_to "logout",  destroy_session_path %>
-    </h3>
-  <% else %>
-      <%= link_to "login using twitter", "/auth/twitter" %>
-  <% end %>
-  </h3>
 
-  <div id='startLat'></div>
-  <div id='startLon'></div>
+<div class='hide' id='startLat'></div>
+<div class='hide' id='startLon'></div>
+<div id='showeather'></div>
 
-<div id='showeather'> </div>
 <div id= 'calendar'>
+  <table class='table table-bordered'>
+    <h3 class='calendtitle'>  <%= @week2.first.strftime("%B")%> </h3>
+    <tr>
+      <th class='calcol'><h4 class='small'>SUNDAY</h4></th>
+      <th class='calcol'><h4 class='small'>MONDAY</h4></th>
+      <th class='calcol'><h4 class='small'>TUESDAY</h4></th>
+      <th class='calcol'><h4 class='small'>WEDNESDAY</h4></th>
+      <th class='calcol'><h4 class='small'>THURSDAY</h4></th>
+      <th class='calcol'><h4 class='small'>FRIDAY</h4></th>
+      <th class='calcol'><h4 class='small'>SATURDAY</h4></th>
+    </tr>
+    <tr class='calrow'>
+      <% @week1.each do |day| %>
+        <td class='calcol'>
+          <% if day.class == Date %>
+            <%= day.mday %>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
 
-<table class='table table-bordered'>
-<h3 class='calendtitle'>  <%= @week2.first.strftime("%B")%> </h3>
-  <tr>
-    <th class='calcol'><h4 class='small'>SUNDAY</h4></th>
-    <th class='calcol'><h4 class='small'>MONDAY</h4></th>
-    <th class='calcol'><h4 class='small'>TUESDAY</h4></th>
-    <th class='calcol'><h4 class='small'>WEDNESDAY</h4></th>
-    <th class='calcol'><h4 class='small'>THURSDAY</h4></th>
-    <th class='calcol'><h4 class='small'>FRIDAY</h4></th>
-    <th class='calcol'><h4 class='small'>SATURDAY</h4></th>
-  </tr>
-  <tr class='calrow'>
-    <% @week1.each do |day| %>
-      <td class='calcol'>
-        <% if day.class == Date %>
-          <%= day.mday %>
-        <% end %>
-      </td>
-    <% end %>
-  </tr>
+    <tr class='calrow'>
+      <% @week2.each do |day| %>
+        <td class='calcol'>
+          <% if day.class == Date %>
+            <%= day.mday %>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
 
-  <tr class='calrow'>
-    <% @week2.each do |day| %>
-      <td class='calcol'>
-        <% if day.class == Date %>
-          <%= day.mday %>
-        <% end %>
-      </td>
-    <% end %>
-  </tr>
+    <tr class='calrow'>
+      <% @week3.each do |day| %>
+        <td class='calcol'>
+          <% if day.class == Date %>
+            <%= day.mday %>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
 
-  <tr class='calrow'>
-    <% @week3.each do |day| %>
-      <td class='calcol'>
-        <% if day.class == Date %>
-          <%= day.mday %>
-        <% end %>
-      </td>
-    <% end %>
-  </tr>
+    <tr class='calrow'>
+      <% @week4.each do |day| %>
+        <td class='calcol'>
+          <% if day.class == Date %>
+            <%= day.mday %>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
 
-  <tr class='calrow'>
-    <% @week4.each do |day| %>
-      <td class='calcol'>
-        <% if day.class == Date %>
-          <%= day.mday %>
-        <% end %>
-      </td>
-    <% end %>
-  </tr>
+    <tr class='calrow'>
+      <% @week5.each do |day| %>
+        <td class='calcol'>
+          <% if day.class == Date %>
+            <%= day.mday %>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
 
-  <tr class='calrow'>
-    <% @week5.each do |day| %>
-      <td class='calcol'>
-        <% if day.class == Date %>
-          <%= day.mday %>
+    <% if @week6.first.class == Date %>
+      <tr class='calrow'>
+        <% @week6.each do |day| %>
+          <td class='calcol'>
+            <% if day.class == Date %>
+              <%= day.mday %>
+            <% end %>
+          </td>
         <% end %>
-      </td>
+      </tr>
     <% end %>
-  </tr>
-
-  <% if @week6.first.class == Date %>
-  <tr class='calrow'>
-    <% @week6.each do |day| %>
-      <td class='calcol'>
-        <% if day.class == Date %>
-          <%= day.mday %>
-        <% end %>
-      </td>
-    <% end %>
-  </tr>
-  <% end %>
 </table>
-<% @week2.first.strftime("%B")%>
-<%=button_to "Next", root_path(thing: "next", time: @week2.first), class: "pull-right choose btn btn-success"  %>
-<%=button_to "Previous", root_path(thing: "prev", time: @week2.first), class: "calendbtn2 choose btn btn-success"  %>
+
+    <% @week2.first.strftime("%B")%>
+    <%=button_to "Next", root_path(thing: "next", time: @week2.first), class: "pull-right choose btn btn-success"  %>
+    <%=button_to "Previous", root_path(thing: "prev", time: @week2.first), class: "calendbtn2 choose btn btn-success"  %>
   </div>
 </div>
