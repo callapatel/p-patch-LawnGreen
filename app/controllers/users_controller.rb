@@ -11,9 +11,12 @@ class UsersController < ApplicationController
     :admin,
     )
   end
-  
+
   def email
     User.find(session[:user_id]).update(params.require(:user).permit(:email))
+    @user = User.find(session[:user_id])
+    #send them a welcome email
+    NewsMailer.welcome(@user.id).deliver
     redirect_to root_path
   end
 end
