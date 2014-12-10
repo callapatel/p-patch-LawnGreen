@@ -6,4 +6,10 @@ class NewsMailer < ActionMailer::Base
     mail(to: @user.email, subject: "welcome!")
   end
 
+  def posts(user, post)
+    @user = user
+    @post = post
+    mail(to: @user.email, subject: "hello #{@post.title}" )
+
+  end
 end
