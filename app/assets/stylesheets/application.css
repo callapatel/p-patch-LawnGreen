@@ -20,6 +20,27 @@ body {
   letter-spacing: 1px !important;
 }
 
+.subscribebox {
+  background-image: url('http://sf-p.rtrcdn.com/images/promo-bar-background.jpg');
+  text-size: 14px;
+  height: 30px;
+  text-align: center;
+  color: #feecec;
+}
+
+.leasenav {
+  padding-top: 4px;
+  font-style:normal;
+}
+
+.leasenav a{
+  color: #feecec;
+}
+
+.leasenav:hover {
+  color: #767F96 !important;
+}
+
 .btn {
   background: #15203E;
   margin:  #15203E;
