@@ -14,14 +14,19 @@
     </div>
   </div>
 
-<div class='container'>
-  <div class='maintitle'><div<a href='/'>LEASE THE LIFE</a></div>
-  <div class='leftnav'>
-    <%= link_to "tools", tools_path %>
-    <%= link_to "posts", posts_path %>
-  </div>
-  <div class='rightnav'>
-  </div>
+  <div class='container'>
+    <div class='maintitle'><div<a href='/'>LEASE THE LIFE</a></div>
+    <div class='leftnav'>
+      <%= link_to "tools", tools_path %>
+      <%= link_to "posts", posts_path %>
+    </div>
+    <div class='rightnav'>
+      <% if session[:user_id] %>
+        <%= link_to "logout",  destroy_session_path %>
+      <% else %>
+        <%= link_to "login", "/auth/twitter" %>
+      <% end %>
+    </div>
 </div>
 
  

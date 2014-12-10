@@ -53,3 +53,6 @@ body {
   background: #1b2a51;
 }
 
+.hide {
+  color: white !important;
+}
