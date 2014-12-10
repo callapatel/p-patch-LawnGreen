@@ -1,0 +1,36 @@
+<script>
+  $(function() {
+    $( "#datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true
+    });
+  });
+</script>
+
+<div class='modal-header'>
+<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>x</button>
+  <div class='modal-title'><h2><b><i>What's happening?</i></b></h2></div>
+</div>
+
+<div class='modal-body'>
+    <form action='events/new' method='POST' role='form'>
+      <div class = 'form-group'>
+        <label for='eventtitle'>EVENT TITLE</label>
+        <input type='text' name='event[title]' class='form-control' placeholder="What's it called?" id='eventtitle'/>
+<br>
+        <label for='eventdescription'>DESCRIPTION</label>
+        <input type='text' name='event[description]' class='form-control' placeholder='Details please!' id='eventdescription'/>
+ <br>       
+        <label for='eventdate'>DATE</label>
+        <input type="text" name='event[date]' id="datepicker" class='form-control' placeholder='When?' id='eventdate'>
+<br>
+<br>
+<br>
+      </div>
+</div>
+
+<div class='modal-footer'>
+  <input type='submit' value='Add to calendar' class='btn btn-primary'/>
+    </form>
+</div>
+

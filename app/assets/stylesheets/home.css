@@ -26,5 +26,11 @@ th {
 
 .calendtitle {
   text-transform: uppercase;
+  display: inline;
 }
 
+#fml {
+  color: #15203E !important;
+  font-family: Helvetica, sans-serif !important;
+  letter-spacing: 1px !important;
+}

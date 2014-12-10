@@ -20,6 +20,8 @@ body {
   letter-spacing: 1px !important;
 }
 
+.navcontainer {
+}
 .subscribebox {
   background-image: url('http://sf-p.rtrcdn.com/images/promo-bar-background.jpg');
   text-size: 14px;
@@ -41,6 +43,42 @@ body {
   color: #767F96 !important;
 }
 
+.maintitle {
+  padding-top: 20px;
+  padding-bottom: 25px;
+  float: left;
+}
+
+.maintitle a {
+  color: #15203E;
+  text-decoration: none;
+  font-weight: 600 !important;
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  letter-spacing: 3px !important;;
+}
+
+.leftnav {
+  display: float;
+  float: bottom;
+  text-align: left;
+}
+
+.leftnav a {
+  font-size: 14px !important;
+  color: #15203E;
+  text-decoration: none;
+  font-weight: normal !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  padding-right: 20px;
+} 
+
+.rightnav {
+  float: right;
+  display: inline;
+}
+ 
 .btn {
   background: #15203E;
   margin:  #15203E;

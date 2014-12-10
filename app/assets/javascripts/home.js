@@ -20,5 +20,5 @@ window.onload = function() {
     );
   };
   navigator.geolocation.getCurrentPosition(geoSuccess);
-
+  
 };

@@ -6,6 +6,9 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,700italic' rel='stylesheet' type='text/css'>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+
 </head>
 
 <body>
@@ -14,18 +17,19 @@
     </div>
   </div>
 
-  <div class='container'>
-    <div class='maintitle'><div<a href='/'>LEASE THE LIFE</a></div>
-    <div class='leftnav'>
-      <%= link_to "tools", tools_path %>
-      <%= link_to "posts", posts_path %>
-    </div>
+  <div class='navcontainer container'>
+    <div class='maintitle'><a href='/'>LEASE THE LIFE</a></div>
     <div class='rightnav'>
       <% if session[:user_id] %>
-        <%= link_to "logout",  destroy_session_path %>
+        <%= link_to "Logout",  destroy_session_path %>
       <% else %>
-        <%= link_to "login", "/auth/twitter" %>
+        <%= link_to "Login", "/auth/twitter" %>
       <% end %>
+      Blah
+    </div>
+    <div class='leftnav'>
+      <%= link_to "Items", tools_path %>
+      <%= link_to "News", posts_path %>
     </div>
 </div>
 
