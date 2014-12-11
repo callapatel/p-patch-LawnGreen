@@ -58,11 +58,11 @@ body {
   letter-spacing: 3px !important;;
 }
 
-.leftnav {
+/*.leftnav {
   display: float;
   float: bottom;
   text-align: left;
-}
+}*/
 
 .leftnav a {
   font-size: 14px !important;
@@ -77,6 +77,13 @@ body {
 .rightnav {
   float: right;
   display: inline;
+  padding-top: 20px;
+  color: #666666;
+}
+
+.rightnav a {
+  color: #666666;
+  padding-right: 20px;
 }
  
 .btn {
