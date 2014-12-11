@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   post 'user/email',              to: "users#email"
 
+  post 'events/new',              to: "events#new" 
+
   get '/tools',                   to: "tools#index",      as: :tools
   post '/tools/borrow',           to: "tools#borrow",     as: :borrow
   delete '/tools/return',         to: "tools#return",     as: :return

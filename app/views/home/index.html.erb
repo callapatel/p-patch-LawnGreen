@@ -4,9 +4,21 @@
 <div class='hide' id='startLon'></div>
 <div id='showeather'></div>
 
+<!--event button stuff-->
+
+<div id='event-modal-window' class='modal fade' role='dialog' aria-labelledby='myModalLabel' aria-hidden
+='true' >
+  <div class='modal-dialog'>
+    <div class='modal-content'>
+      <%= render 'events/new'%>
+    </div>
+  </div>
+</div>
+
 <div id= 'calendar'>
   <table class='table table-bordered'>
     <h3 class='calendtitle'>  <%= @week2.first.strftime("%B")%> </h3>
+    <a id="fml"  href='javascript:void(0)' onClick="$('#event-modal-window').modal()">Add an event</a>
     <tr>
       <th class='calcol'><h4 class='small'>SUNDAY</h4></th>
       <th class='calcol'><h4 class='small'>MONDAY</h4></th>
