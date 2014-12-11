@@ -18,8 +18,8 @@
   </div>
 
   <div class='navcontainer container'>
-    <div class='maintitle'><a href='/'>LEASE THE LIFE</a></div>
-    <div class='rightnav'>
+    <div class='maintitle span6'><a href='/'>LEASE THE LIFE</a></div>
+    <div class='rightnav span3'>
       <% if session[:user_id] %>
         <%= link_to "Logout",  destroy_session_path %>
       <% else %>
@@ -27,11 +27,13 @@
       <% end %>
       Blah
     </div>
-    <div class='leftnav'>
-      <%= link_to "Items", tools_path %>
-      <%= link_to "News", posts_path %>
-    </div>
-</div>
+  </div>
+
+  <div class='leftnav container'>
+    <%= link_to "Items", tools_path %>
+    <%= link_to "News", posts_path %>
+  <hr>  
+  </div>
 
  
  <div id='modal-window' class='modal fade' role='dialog' aria-labelledby='myModalLabel' aria-hidden
