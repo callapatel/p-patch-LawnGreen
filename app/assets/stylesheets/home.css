@@ -34,3 +34,12 @@ th {
   font-family: Helvetica, sans-serif !important;
   letter-spacing: 1px !important;
 }
+
+.cimg {
+  float: right;
+}
+
+.aimg {
+  float: left;
+  max-width: 50%; 
+}
