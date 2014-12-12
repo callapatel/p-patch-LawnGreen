@@ -1,16 +1,20 @@
+<div class = 'container'>
 <% Tool.all.order(:id).each do |tool| %>
-  <img src='<%=tool.image%>' width='150'>
+  <div class='col-md-4 col-xs-6 toolbox'>
+  <div class = 'toolimg'><img src='<%=tool.image%>' width='150'></div>
   <br>
-  <div id='<%=tool.id%>' class='tool'><%=tool.quantity%></div>
+  <div class='tool'>Available: <%=tool.quantity%></div>
   <br>
   <% if @user %>
+  <div class = 'toolbuttons'>
     <% if tool.quantity > 0 %>
-      <%= button_to "Borrow", borrow_path({tool_id: tool.id}), method: :post, class: "borrow" %>
+      <%= button_to "Lease", borrow_path({tool_id: tool.id}), method: :post, class: "borrow btn btn-primary" %>
     <% end %>
-    <% if ToolUser.where(tool_id: tool.id, user_id: session[:user_id]).first %> Use AR relation
-      <%= button_to "Return", return_path({tool_id: tool.id}), method: :delete, class: "return" %>
+    <% if ToolUser.where(tool_id: tool.id, user_id: session[:user_id]).first %>
+      <%= button_to "Return", return_path({tool_id: tool.id}), method: :delete, class: "return btn btn-primary" %>
     <% end %>
+  </div>
   <% end %>
+  </div>
 <% end %>
-
-<%= render "productcarousel" %> 
+</div>
