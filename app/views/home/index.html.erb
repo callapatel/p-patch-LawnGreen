@@ -1,4 +1,14 @@
 <div class = 'container'>
+  <body>
+  <div class = 'row'>
+    <div class='col-md-6 aimg'>
+      <%= image_tag "a.jpg" %>
+    </div>
+    <div class='col-md-6 cimg'>
+        <%= image_tag "c.jpg"%>
+
+    </div>
+  </div>
 
 <div class='hide' id='startLat'></div>
 <div class='hide' id='startLon'></div>
@@ -49,6 +59,12 @@
         <td class='calcol'>
           <% if day.class == Date %>
             <%= day.mday %>
+            <br>
+            <% events = Event.where(date: day.strftime)%>
+            <% events.each do |event| %>
+              <%= '∙ '+event.title[0..15]%>
+              <br>
+            <% end %>
           <% end %>
         </td>
       <% end %>
@@ -59,6 +75,12 @@
         <td class='calcol'>
           <% if day.class == Date %>
             <%= day.mday %>
+            <br>
+            <% events = Event.where(date: day.strftime)%>
+            <% events.each do |event| %>
+              <%= '∙ '+event.title[0..15]%>
+              <br>
+            <% end %>
           <% end %>
         </td>
       <% end %>
@@ -69,6 +91,12 @@
         <td class='calcol'>
           <% if day.class == Date %>
             <%= day.mday %>
+            <br>
+            <% events = Event.where(date: day.strftime)%>
+            <% events.each do |event| %>
+              <%= '∙ '+event.title[0..15]%>
+              <br>
+            <% end %>
           <% end %>
         </td>
       <% end %>
@@ -79,6 +107,12 @@
         <td class='calcol'>
           <% if day.class == Date %>
             <%= day.mday %>
+            <br>
+            <% events = Event.where(date: day.strftime)%>
+            <% events.each do |event| %>
+              <%= '∙ '+event.title[0..15]%>
+              <br>
+            <% end %>
           <% end %>
         </td>
       <% end %>
@@ -90,6 +124,12 @@
           <td class='calcol'>
             <% if day.class == Date %>
               <%= day.mday %>
+              <br>
+              <% events = Event.where(date: day.strftime)%>
+              <% events.each do |event| %>
+                <%= '∙ '+event.title[0..15]%>
+                <br>
+              <% end %>
             <% end %>
           </td>
         <% end %>
@@ -102,3 +142,4 @@
     <%=button_to "Previous", root_path(thing: "prev", time: @week2.first), class: "calendbtn2 choose btn btn-success"  %>
   </div>
 </div>
+</body>
