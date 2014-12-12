@@ -1,20 +1,21 @@
 <div class = 'container'>
 <% Tool.all.order(:id).each do |tool| %>
-  <div class='col-md-4 col-xs-6 toolbox'>
+  <div class = 'col-md-4 col-xs-6 tooltop'>
   <div class = 'toolimg'><img src='<%=tool.image%>' width='150'></div>
   <br>
+  <div class='toolname'> <%=tool.name%></div>
   <div class='tool'>Available: <%=tool.quantity%></div>
-  <br>
+  <div class='buttonholder'>
   <% if @user %>
-  <div class = 'toolbuttons'>
     <% if tool.quantity > 0 %>
       <%= button_to "Lease", borrow_path({tool_id: tool.id}), method: :post, class: "borrow btn btn-primary" %>
     <% end %>
     <% if ToolUser.where(tool_id: tool.id, user_id: session[:user_id]).first %>
       <%= button_to "Return", return_path({tool_id: tool.id}), method: :delete, class: "return btn btn-primary" %>
+    <% else %>
     <% end %>
-  </div>
   <% end %>
+  </div>
   </div>
 <% end %>
 </div>
