@@ -35,11 +35,8 @@ th {
   letter-spacing: 1px !important;
 }
 
-.cimg {
-  float: right;
-}
-
-.aimg {
+.images img {
+  max-width: 49%;
+  margin: 0px;
   float: left;
-  max-width: 50%; 
 }
