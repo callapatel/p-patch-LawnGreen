@@ -11,9 +11,9 @@
       <%  if post.image != 'nil' %>
         <img src="<%= post.image %>">
       <%  end %>
-      <br>
+      <br><br>
 
-  <div class = "postfont">
+  <div class = "postfont squeeze">
       <%= post.content.split[0..30].join(" ") %>
       <br>
       <%= link_to "Read more...", post %>
