@@ -1,12 +1,19 @@
 <div class = 'container'>
+  <center>
   <h2>
+    <div class = 'modal-title'>
   <%= @post.title %>
+    </div>
   </h2>
   <br>
+  <img src="<%= @post.image %>"><br>
+  <br>
   <h4>
+    <div class = "postfont">
      <%= @post.content %>
+   </div> 
   </h4>
-   
+
   <div id="disqus_thread">
     <script>
 
@@ -22,3 +29,4 @@
   </script>
   </div>
 </div>
+</center>
