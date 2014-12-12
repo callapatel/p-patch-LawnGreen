@@ -1,13 +1,24 @@
 <div class = 'container'>
-  <% @posts.each do |post| %>
-    <p>
-      <hr>
-        <h1><%= post.title %></h1>
-      </hr>
-    <br>
-      <h3><%= post.content.split[0..30].join(" ") %></h3> 
+  <center>
+    <% @posts.each do |post| %>
+      <p>
+        <hr>
+        <div class = "modal-title">
+          <h1><%= post.title %></h1>
+        </div>
+        </hr>
+      <br>
+      <%  if post.image != 'nil' %>
+        <img src="<%= post.image %>">
+      <%  end %>
+      <br>
+
+  <div class = "postfont">
+      <%= post.content.split[0..30].join(" ") %>
       <br>
       <%= link_to "Read more...", post %>
+  </div>
   </p>
   <% end %>
 </div>
+</center>

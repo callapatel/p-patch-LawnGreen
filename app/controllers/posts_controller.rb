@@ -17,11 +17,11 @@ class PostsController < ApplicationController
     @post = current_user.posts.create(post_params)
     # raise params.inspect
     if @post.save
-       User.all.each do |user|
-          if user.email
-            NewsMailer.posts(user, @post).deliver
-          end
-        end
+      #  User.all.each do |user|
+      #     if user.email
+      #       NewsMailer.posts(user, @post).deliver
+      #     end
+      #   end
       redirect_to @post
     else
       render :new
