@@ -37,6 +37,14 @@ th {
 
 .images img {
   max-width: 49%;
-  margin: 0px;
+  margin: .5px;
   float: left;
+}
+
+#present {
+  background-color: #f7f7f7;
+}
+
+#weatherforecast {
+  margin-bottom: 20px;
 }

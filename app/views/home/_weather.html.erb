@@ -1,26 +1,21 @@
-<div class = 'container'>
-  <h1>
-    <%= @current['name'] %> weather forecast
-  </h1>
-  <h4>
+<div class = 'container'><hr></div>
+<div id= 'weatherforecast' class = 'container'>
+  <div class='calendtitle'><h3><%= @current['name'] %> weather forecast</h3></div>
+    <div id='present' class='col-md-2 col-xs-6'>  
+    <h6>
+    Current:<%= convert(@current['main']['temp']) %>°
     <br>
-    <%= convert(@current['main']['temp']) %>
+    High: <%= convert(@current['main']['temp_max']) %>°
     <br>
-    High: <%= convert(@current['main']['temp_max']) %>
-    <br>
-    Low: <%= convert(@current['main']['temp_min'])%>
+    Low: <%= convert(@current['main']['temp_min'])%>°
     <br>
     Forecast: <%= @current['weather'][0]['main']%>
     <br>
     <img src='http://openweathermap.org/img/w/<%=@current['weather'][0]['icon']%>.png'>
-  </h4>
-
-  <h2>
-    5 day forecast for <%= @current['name']%>
-  </h2>
-  <div class = 'row'>
+    </h6>
+    </div>
     <% @forecasted["list"].each do |forecast| %>
-              <div class='col-md-2'>
+              <div class='col-md-2 col-xs-6'>
                 <h6>
                   Day:  <%=  (Time.at((forecast["dt"]))).strftime("%A") %> <br>
                   High:  <%= convert(forecast["temp"]["max"]) %> <br>
@@ -31,7 +26,5 @@
                 </h6>
               </div>
     <% end %>
-
-
-  </div>
 </div>
+<div class = 'container'><hr></div>
