@@ -1,12 +1,9 @@
-<div class = 'container'>
   <body>
-  <div class = 'row'>
-    <div class='col-md-6 aimg'>
-      <%= image_tag "a.jpg" %>
-    </div>
-    <div class='col-md-6 cimg'>
-        <%= image_tag "c.jpg"%>
 
+<div class = 'container'>
+    <div class='images'>
+      <%= image_tag "a.jpg" %>
+      <%= image_tag "c.jpg"%>
     </div>
   </div>
 
@@ -25,6 +22,7 @@
   </div>
 </div>
 
+<div class='container'>
 <div id= 'calendar'>
   <table class='table table-bordered'>
     <h3 class='calendtitle'>  <%= @week2.first.strftime("%B")%> </h3>
@@ -141,5 +139,6 @@
     <%=button_to "Next", root_path(thing: "next", time: @week2.first), class: "pull-right choose btn btn-success"  %>
     <%=button_to "Previous", root_path(thing: "prev", time: @week2.first), class: "calendbtn2 choose btn btn-success"  %>
   </div>
+</div>
 </div>
 </body>
